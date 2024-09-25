@@ -31,7 +31,7 @@ $sesi = $_SESSION['MEMBER'];
         <div class="logo d-none d-lg-block">
           <!-- Brand -->
           <a class="navbar-brand js-scroll-trigger" href="index.php?hal=home">
-            <h2 class="mb-0">Universitas Baru Jadi</h2>
+            <h2 class="mb-0">Penerimaan Mahasiswa Baru</h2>
           </a>
         </div>
       </div>
@@ -75,7 +75,7 @@ $sesi = $_SESSION['MEMBER'];
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav navbar-togglable rounded-radius">
 
       <a class="navbar-brand d-lg-none d-block" href="index.php?hal=home">
-        <h4 class="h3 mb-0">Universitas Baru Jadi</h4>
+        <h4 class="h3 mb-0">Penerimaan Mahasiswa Baru</h4>
       </a>
       <!-- Toggler -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -108,11 +108,17 @@ $sesi = $_SESSION['MEMBER'];
           </li>
           <?php
             if(!isset($sesi)){?>
+            <li class="nav-item ">
+              <a href="index.php?hal=siswa" class="nav-link js-scroll-trigger">
+                Jurnal Pendaftaran
+              </a>
+            </li>
+            <li><a href="index.php?hal=siswa_form" class="btn btn-white btn-circled" style="margin-right: 15px;">Daftar</a></li>
             <li><a href="login_form.php" class="btn btn-white btn-circled">Login</a></li>
             <?php } 
             else {?> 
                 <li class="nav-item ">
-                    <a href="index.php?hal=siswa_form2" class="nav-link js-scroll-trigger">
+                    <a href="index.php?hal=siswa_form" class="nav-link js-scroll-trigger">
                     Pendaftaran
                     </a>
                 </li>

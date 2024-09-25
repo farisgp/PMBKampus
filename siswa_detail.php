@@ -1,5 +1,5 @@
 <?php
-$id = $_REQUEST['id'];
+$id = $_REQUEST['idmhs'];
 $model = new Siswa();
 $data_siswa = $model->getSiswa($id);
 ?>
@@ -8,7 +8,7 @@ $data_siswa = $model->getSiswa($id);
             <div class="row justify-content-center">
                         <div class="col-lg-6 pl-4 text-center">
                             <div class="service-content">
-                                <h1>Data Detail Siswa Dengan ID Pendaftaran <?=$data_siswa['id']?></h1>
+                                <h1>Data Detail Siswa Dengan NISN <?=$data_siswa['nisn']?></h1>
                                 <div class="alert alert-success" role="alert">
                                 <table align="center">
                                     <tr>
@@ -17,9 +17,9 @@ $data_siswa = $model->getSiswa($id);
                                         <td align="left"><?= $data_siswa['nama'] ?></td>
                                     <tr>
                                     <tr>
-                                        <td align="left">ID Pendaftaran</td>
+                                        <td align="left">NISN</td>
                                         <td>:</td>
-                                        <td align="left"><?= $data_siswa['id'] ?></td>
+                                        <td align="left"><?= $data_siswa['nisn'] ?></td>
                                     <tr>
                                     <tr>
                                         <td align="left">Jenis Kelamin</td>
@@ -44,7 +44,7 @@ $data_siswa = $model->getSiswa($id);
                                     <tr>
                                         <td align="left">Prodi Pilihan</td>
                                         <td>:</td>
-                                        <td align="left"><?= $data_siswa['prodi_pilihan'] ?></td>
+                                        <td align="left"><?= $data_siswa['nama_prodi'] ?></td>
                                     <tr>
                                 </table>
                                 </div>
@@ -53,8 +53,8 @@ $data_siswa = $model->getSiswa($id);
             </div>
             
             <p align="right">
-                <a href="index.php?hal=siswa" class="btn btn-primary" title="back">
-                    <i class="fa-hand-o-left" aria-hidden="true"></i>
+                <a href="index.php?hal=siswa" class="btn btn-primary" title="Kembali">
+                    <i class="fa fa-arrow-left"></i>
                 </a>
             </p>
 </section>

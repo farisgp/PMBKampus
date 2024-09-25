@@ -39,8 +39,23 @@ if(isset($sesi) && $sesi['role'] == 'admin' ){
                             <td><?= $row['email'] ?></td>
                             <td><?= $row['username'] ?></td>
                             <td><?= $row['role'] ?></td>
+                            <?php
+                                if($sesi['role'] == 'admin'){
+                            ?>
                             <td>
+                                <form action="#indevelopment" method="POST">
+                                    <a href="#indevelopment">
+                                        <button type="button" class="btn-warning btn-sm" title="Ubah Siswa">
+                                            <i class="fa fa-pencil" aria-hidden="true" ></i>
+                                        </button>
+                                    </a>
+                                    <button type="submit" class="btn-danger btn-sm" value=""
+                                        onclick="return confirm('Anda Yakin Data akan diHapus?')" title="Hapus Siswa">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </button>
+                                </form>
                             </td>
+                            <?php } ?>
                         </tr>
                         <?php
                         $no++;

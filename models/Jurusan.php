@@ -12,4 +12,11 @@ class Jurusan{
         $rs = $ps->fetchAll();
         return $rs;
     }
+    public function jumlahJurusan () {
+        $sql = "SELECT COUNT(nama_prodi) as jumlah FROM jurusan";
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute();
+        $rs = $ps->fetch();
+        return $rs;
+    }
 }

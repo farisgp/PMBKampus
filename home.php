@@ -11,7 +11,7 @@
 
                         <!-- Subheading -->
                         <p class="lead mb-4">
-                        Website Resmi Penerimaan Mahasiswa Baru UNBAJA
+                        Website Penerimaan Mahasiswa Baru 
                         </p>
                     </div>
                 </div>

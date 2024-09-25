@@ -16,7 +16,6 @@ $data_jurusan = $model->dataJurusan();
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">ID Prodi</th>
                             <th scope="col">Nama Prodi</th>
                             <th scope="col">Daya Tampung</th>
                             <th scope="col">Syarat Lulusan</th>
@@ -29,7 +28,6 @@ $data_jurusan = $model->dataJurusan();
                         ?>
                         <tr>
                             <th scope="row"><?= $no ?></th>
-                            <td><?= $row['id'] ?></td>
                             <td><?= $row['nama_prodi'] ?></td>
                             <td><?= $row['daya_tampung'] ?></td>
                             <td><?= $row['syarat_lulusan'] ?></td>

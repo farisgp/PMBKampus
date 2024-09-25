@@ -7,7 +7,7 @@
          <div class="footer-widget">
            <!-- Brand -->
            <a href="index.php?hal=home" class="footer-brand text-white">
-             Universitas Baru Jadi
+             Penerimaan Mahasiswa Baru
            </a>
            <p>Each theme featured at the Bootstrap marketplace has been reviewed by Bootstrap's creators.Lorem ipsum
              dolor sit amet, consectetur adipisicing elit.</p>
@@ -51,54 +51,34 @@
 
        <div class="col-lg-2 col-sm-6">
          <div class="footer-widget">
-           <h3>About</h3>
+           <h3>Fast Link</h3>
            <!-- Links -->
            <ul class="footer-links">
+           <li>
+              <a href="index.php?hal=home">
+                Home
+              </a>
+            </li>
             <li>
-              <a href="about.html">
+              <a href="index.php?hal=about">
                 About Us
               </a>
             </li>
              <li>
-               <a href="service.html">
-                 Services
+               <a href="index.php?hal=jurusan">
+                 Progam Studi
                </a>
              </li>
              <li>
-               <a href="pricing.html">
-                 Pricing
+               <a href="index.php?hal=daya_tampung">
+               Informasi Program Studi
                </a>
              </li>
              <li>
-               <a href="project.html">
-                Recent Projects
+               <a href="index.php?hal=siswa">
+               Jurnal Pendaftaran
                </a>
              </li>
-
-             <li>
-               <a href="contact.html">
-                 Contact
-               </a>
-             </li>
-           </ul>
-         </div>
-       </div>
-
-       <div class="col-lg-2 col-sm-6">
-         <div class="footer-widget">
-           <h3>Socials</h3>
-           <!-- Links -->
-           <ul class="list-unstyled footer-links">
-             <li><a href="https://www.facebook.com/themefisher"><i class="fab fa-facebook-f"></i>Facebook</a></li>
-             <li>
-               <a href="https://www.twitter.com/themefisher"><i class="fab fa-twitter"></i>Twitter
-               </a></li>
-             <li><a href="https://www.pinterest.com/themefisher/"><i class="fab fa-pinterest-p"></i>Pinterest
-               </a></li>
-             <li><a href="https://themefisher.com/"><i class="fab fa-linkedin"></i>linkedin
-               </a></li>
-             <li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA"><i class="fab fa-youtube"></i>YouTube
-               </a></li>
            </ul>
          </div>
        </div>
@@ -112,7 +92,7 @@
           <p class="footer-copy">
             Copyright &copy; <script>var CurrentYear = new Date().getFullYear()
             document.write(CurrentYear)
-          </script>. Designed &amp; Developed by <a class="current-year" href="https://themefisher.com/">Themefisher</a>
+          </script>. Designed &amp; Developed by Faris Ghina</a>
           </p>
          </div>
        </div>

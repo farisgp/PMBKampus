@@ -13,7 +13,7 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>PMB Universitas Baru Jadi</title>
+  <title>Penerimaan Mahasiswa Baru</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->

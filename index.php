@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ERROR | E_PARSE);
 include_once 'koneksi.php';
 include_once 'models/Jurusan.php';
 include_once 'models/Siswa.php';
