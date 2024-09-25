@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 22, 2023 at 04:44 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Host: localhost:3306
+-- Generation Time: Sep 25, 2024 at 03:23 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,22 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `jurusan` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama_prodi` varchar(45) NOT NULL,
-  `daya_tampung` int(11) DEFAULT NULL,
+  `daya_tampung` int DEFAULT NULL,
   `syarat_lulusan` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `jurusan`
 --
 
 INSERT INTO `jurusan` (`id`, `nama_prodi`, `daya_tampung`, `syarat_lulusan`) VALUES
-(11111, 'Teknik Informatika', 150, 'SMA IPA'),
-(22222, 'Sistem Informasi', 100, 'SMA IPA'),
-(33333, 'Teknik Komputer', 150, 'SMA IPA'),
-(44444, 'Sistem Operasi', 125, 'SMA IPA'),
-(55555, 'Keamanan Siber', 100, 'SMA IPA');
+(1, 'Teknik Informatika', 150, 'SMA IPA'),
+(2, 'Sistem Informasi', 150, 'SMA IPA'),
+(3, 'Teknik Komputer', 125, 'SMA IPA'),
+(4, 'Sistem Operasi', 125, 'SMA IPA'),
+(5, 'Keamanan SIber', 100, 'SMA IPA');
 
 -- --------------------------------------------------------
 
@@ -52,13 +52,13 @@ INSERT INTO `jurusan` (`id`, `nama_prodi`, `daya_tampung`, `syarat_lulusan`) VAL
 --
 
 CREATE TABLE `member` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `fullname` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `role` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `member`
@@ -68,7 +68,7 @@ INSERT INTO `member` (`id`, `fullname`, `email`, `username`, `password`, `role`)
 (1, 'andi', 'admin1@gmail.com', 'admin1', '0eb4e14e3a0af58fa476', 'admin'),
 (2, 'budi', 'admin2@gmail.com', 'admin2', '0eb4e14e3a0af58fa476', 'manager'),
 (3, 'citra', 'admin3@gmail.com', 'admin3', '0eb4e14e3a0af58fa476', 'staff'),
-(6, 'admin', 'admin@gmail.com', 'admin', 'admin', 'admin');
+(4, 'dodi', 'admin@gmail.com', 'admin', 'af7e0928fcba501d8ed0385c794e690fe151bf16', 'admin');
 
 -- --------------------------------------------------------
 
@@ -77,12 +77,12 @@ INSERT INTO `member` (`id`, `fullname`, `email`, `username`, `password`, `role`)
 --
 
 CREATE TABLE `panitia_pendaftaran` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama_panitia` varchar(45) NOT NULL,
   `jenis_kelamin` varchar(20) NOT NULL,
   `alamat` varchar(45) NOT NULL,
-  `umur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `umur` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `panitia_pendaftaran`
@@ -98,56 +98,31 @@ INSERT INTO `panitia_pendaftaran` (`id`, `nama_panitia`, `jenis_kelamin`, `alama
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendaftaran`
---
-
-CREATE TABLE `pendaftaran` (
-  `id` int(11) NOT NULL,
-  `nis` int(11) NOT NULL,
-  `id_panitia` int(11) NOT NULL,
-  `tanggal_pendaftaran` varchar(20) NOT NULL,
-  `kode_prodi` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pendaftaran`
---
-
-INSERT INTO `pendaftaran` (`id`, `nis`, `id_panitia`, `tanggal_pendaftaran`, `kode_prodi`) VALUES
-(12453, 14923, 12342, '2020-11-12', '3452'),
-(86134, 98679, 58587, '2020-12-12', '3453'),
-(86282, 99874, 35872, '2020-11-10', '3451'),
-(97934, 99878, 12386, '2020-09-12', '3452'),
-(98652, 89692, 64672, '2020-10-12', '3454');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama` varchar(45) NOT NULL,
-  `jenis_kelamin` varchar(20) DEFAULT NULL,
+  `nisn` int NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `alamat` varchar(45) NOT NULL,
   `asal_sekolah` varchar(45) NOT NULL,
-  `umur` int(11) NOT NULL,
-  `kode_prodi` varchar(20) NOT NULL,
-  `prodi_pilihan` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `umur` int NOT NULL,
+  `prodi_pilihan` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id`, `nama`, `jenis_kelamin`, `alamat`, `asal_sekolah`, `umur`, `kode_prodi`, `prodi_pilihan`) VALUES
-(87332, 'Siti Aminah', 'Perempuan', 'Jakarta', 'SMA 01 Jakarta', 18, '3452', 'Teknik Informatika'),
-(95718, 'Mawar Melati', 'Perempuan', 'Kendal', 'SMA 03 Kendal', 18, '3454', 'Sistem Informasi'),
-(96822, 'Bambang Sucipto', 'Laki-laki', 'Batang', 'SMA 1 Gringsing', 18, '3451', 'Teknik Informatika'),
-(97124, 'Budi Santoso', 'Laki-laki', 'Semarang', 'SMA 01 Semarang', 18, '3451', 'Teknik Komputer'),
-(97582, 'Ahmad Efendi', 'Laki-laki', 'Semarang', 'SMA 03 Semarang', 19, '3453', 'Keamanan Siber'),
-(97583, 'sari', NULL, 'jakarta', 'SMA 1 Jakarta', 19, '', '');
+INSERT INTO `siswa` (`id`, `nama`, `nisn`, `jenis_kelamin`, `alamat`, `asal_sekolah`, `umur`, `prodi_pilihan`) VALUES
+(3, 'Andi', 11872378, 'Laki-laki', 'Jakarta Utara', 'Jakarta', 17, 1),
+(4, 'Budi', 82717233, 'Laki-laki', 'kabupaten semarang', 'Semarang', 18, 2),
+(5, 'Citra', 32647267, 'Perempuan', 'Jl. Melati Surabaya', 'Surabaya', 18, 3),
+(6, 'Dedi', 62746265, 'Laki-laki', 'Banyumas', 'Purwokerto', 19, 4),
+(7, 'Edi', 72846265, 'Laki-laki', 'slawi kab tegal', 'Tegal', 20, 5),
+(9, 'Farah', 72637483, 'Perempuan', 'Surakarta jawa tengah', 'Surakarta', 18, 5);
 
 --
 -- Indexes for dumped tables
@@ -172,16 +147,11 @@ ALTER TABLE `panitia_pendaftaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendaftaran`
---
-ALTER TABLE `pendaftaran`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nisn` (`nisn`),
   ADD KEY `prodi_pilihan` (`prodi_pilihan`);
 
 --
@@ -189,16 +159,20 @@ ALTER TABLE `siswa`
 --
 
 --
--- AUTO_INCREMENT for table `pendaftaran`
---
-ALTER TABLE `pendaftaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98653;
-
---
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97584;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `siswa`
+--
+ALTER TABLE `siswa`
+  ADD CONSTRAINT `fk_prodi_jurusan` FOREIGN KEY (`prodi_pilihan`) REFERENCES `jurusan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
